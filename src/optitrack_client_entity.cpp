@@ -175,11 +175,11 @@ void OptitrackClientEntity::connect_to_optitrack(const std::string& host_name)
   if(!optitrack_client_)
   {
     optitrack_host_name_ = host_name;
-    optitrack_client_.reset(new optitrack_sdk::optitrackClient());
+    optitrack_client_.reset(new mocap4r2_optitrack_driver::OptitrackDriverNode());
     optitrack_client_->initialize(host_name);
     optitrack_client_->run();
   }else{
-    std::cout << "optitrackClient: request to connect to: "
+    std::cout << "OptitrackClient: request to connect to: "
               << host_name
               << ". But the optitrack client is already connected to: "
               << optitrack_host_name_

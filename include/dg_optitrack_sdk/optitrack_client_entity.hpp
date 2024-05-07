@@ -124,12 +124,16 @@ private:
   /**
    * @brief This is the optitrack client object to access to the network.
    */
-  std::unique_ptr<optitrack_sdk::OptitrackClient> optitrack_client_;
+  std::unique_ptr<mocap4r2_optitrack_driver::OptitrackDriverNode> optitrack_client_;
 
   /**
    * @brief this the optitrack host name to connect to.
    */
   std::string optitrack_host_name_;
+  /**
+   * @brief Data structure that contain the vicon information about the frame.
+   */
+  mocap4r2_optitrack_driver::OptitrackFrame optitrack_frame;
 };
 
 } // namespace dg_optitrack_sdk

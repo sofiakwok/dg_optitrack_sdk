@@ -20,13 +20,13 @@ BOOST_PYTHON_MODULE(entities)
 {
     bp::import("dynamic_graph");
 
-    using dg_vicon_sdk::OptitrackClientEntity;
+    using dg_optitrack_sdk::OptitrackClientEntity;
     dynamicgraph::python::exposeEntity<OptitrackClientEntity>().def(
         "add_object_to_track",
-        +[](boost::python::object obj, const std::string& vicon_object_name) {
+        +[](boost::python::object obj, const std::string& object_name) {
             OptitrackClientEntity* entity =
                 boost::python::extract<OptitrackClientEntity*>(obj);
-            entity->add_object_to_track(vicon_object_name);
+            entity->add_object_to_track(object_name);
             return dynamicgraph::python::entity::addSignals(obj);
         },
         "Create a new signal that will attempt to get the vicon "
