@@ -7,12 +7,14 @@ target_include_directories(
   entities PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                              $<INSTALL_INTERFACE:include>)
                              
+
 find_package(mocap4r2_optitrack_driver REQUIRED)
+target_link_libraries(entities mocap4r2_optitrack_driver::mocap4r2_optitrack_driver)
 # Link the dependencies.
 target_link_libraries(entities dynamic-graph::dynamic-graph)
 target_link_libraries(entities
                       dynamic-graph-python::dynamic-graph-python)
-target_link_libraries(entities mocap4r2_optitrack_driver::mocap4r2_optitrack_driver)
+
 # Install the target and it's python bindings.
 install_dynamic_graph_plugin_python_bindings(entities)
 # Install the plugin.

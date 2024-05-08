@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "dg_optitrack_sdk/optitrack_client_entity.hpp"
+#include "mocap4r2_optitrack_driver/mocap4r2_optitrack_driver.hpp"
 
 using namespace std;
 // using namespace dynamicgraph::sot;

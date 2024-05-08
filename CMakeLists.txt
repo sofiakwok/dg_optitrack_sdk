@@ -29,10 +29,13 @@ find_package(mpi_cmake_modules REQUIRED)
 find_package(real_time_tools REQUIRED)
 find_package(dynamic-graph REQUIRED)
 find_package(dynamic-graph-python REQUIRED)
-find_package(mocap4r2_optitrack_driver REQUIRED)
+find_package(mocap4r2_msgs REQUIRED)
+find_package(mocap4r2_control_msgs REQUIRED)
+find_package(mocap4r2_control REQUIRED)
+find_package(mocap4r2_optitrack_driver)
 
 # export de dependencies
-ament_export_dependencies(ament_cmake real_time_tools mpi_cmake_modules mocap4r2_optitrack_driver)
+ament_export_dependencies(ament_cmake real_time_tools mpi_cmake_modules mocap4r2_optitrack_driver vicon_sdk)
 #
 # manage the creation of the libraries and executables
 #
