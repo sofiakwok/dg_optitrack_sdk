@@ -31,6 +31,6 @@ BOOST_PYTHON_MODULE(entities)
         },
         "Create a new signal that will attempt to get the vicon "
         "pause object.",
-        bp::arg("string: name of the vicon object i.e. "
-                "[subject_name]/[segment_name]."));
+        bp::arg("string: rigid body ID of the object i.e. "
+                "1049."));
 }

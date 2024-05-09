@@ -50,11 +50,6 @@ add_subdirectory(src)
 # endif()
 
 #
-# manage the demos
-#
-# add_subdirectory(demos)
-
-#
 # Building documentation.
 #
 add_documentation()

@@ -29,6 +29,8 @@ OptitrackClientEntity::OptitrackClientEntity( const std::string& name ):
   // Actual optitrack Client
   optitrack_client_(nullptr)
 {
+
+  std::cout << "making optitrackcliententity" << std::endl;
   // Define the refresh signal as always ready.
   internal_signal_refresher_.setDependencyType(
     dynamicgraph::TimeDependency<int>::ALWAYS_READY);
@@ -60,6 +62,7 @@ void OptitrackClientEntity::add_object_to_track(
 {
   if(optitrack_client_)
   {
+    std::cout << "adding object to track" << std::endl;
     // get subject name and segment name
     size_t delimiter_pos = optitrack_object_name.find("/");
     std::string subject_name = optitrack_object_name.substr(0, delimiter_pos);
@@ -78,6 +81,8 @@ void OptitrackClientEntity::add_object_to_track(
      */
     signal_name = "OptitrackClientEntity("+name+")::output(vector)::" +
                   subject_name + "::" + segment_name + "_position";
+
+    std::cout << "signal_name: " << signal_name << std::endl;
     callback_func = boost::bind(
       &OptitrackClientEntity::signal_callbacks_position,
       this, optitrack_object_name, _1, _2);
